@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tab";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/navigation/tab";
 import {
   Accordion,
   AccordionContent,
@@ -12,10 +17,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Button } from "../components/ui/button";
+} from "../components/layout/card";
+import { Input } from "../components/forms/input";
+import { Textarea } from "../components/forms/textarea";
+import { Button } from "../components/navigation/button";
+import { MdOutlineCastForEducation } from "react-icons/md";
 
 export default function ForoPage() {
   const [email, setEmail] = useState("");
@@ -32,7 +38,8 @@ export default function ForoPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">
+      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6">
+        <MdOutlineCastForEducation className="mr-2" />
         Foro Universitario
       </h1>
 
