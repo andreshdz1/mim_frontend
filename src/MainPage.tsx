@@ -1,70 +1,110 @@
 import { Link } from "react-router-dom";
-import { MessageSquare, Clock, School, Hammer, Cog } from "lucide-react";
+import { MessageSquare, Clock, School, Hammer, Calendar } from "lucide-react";
 
-export default function MainPage() {
+const MainPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 m-1 p-2 items-center justify-between">
+    <div className="min-h-screen bg-gray-100 m-1 p-2">
       <header className="bg-blue-200 text-white p-1 w-full flex items-center justify-between">
         <div className="flex flex-col">
           <h1 className="text-8xl font-thin mt-2">MIM </h1>
           <h2 className="text-3xl font-arial-narrow">
-            {" "}
-            Módulo de Información Marista{" "}
+            Módulo de Información Marista
           </h2>
         </div>
-        <img src="/public/MIM_2.png" alt="Logo MIM" className="h-40 " />
+        <img src="/public/MIM_2.png" alt="Logo MIM" className="h-40" />
       </header>
 
-      <main className="container mx-auto p-4">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-2xl font-arial-narrow mb-4">
-            Mapa interactivo UMG
-          </h2>
-          <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
-            <img
-              src="/placeholder.svg?height=400&width=800"
-              alt="University Map"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-gray-500 text-lg font-medium">
-                Interactive Map Placeholder
-              </span>
-            </div>
-          </div>
-        </div>
+      <main className="container mx-auto p-4 flex flex-col sm:flex-row gap-8  relative right-24">
+        <div className="flex flex-col items-start  sm:w-1/3 mb-6 sm:mb-0 justify-start mr-130">
+          <Link
+            to="/calendario"
+            className="flex items-center justify-start p-4 bg-white rounded-xl shadow-lg hover:bg-blue-200 transition-colors w-full mb-4"
+          >
+            <Calendar className="w-7 h-7 mr-2 text-blue-800" />
+            <span className="font-arial-narrow text-2xl">Calendario</span>
+          </Link>
 
-        <nav className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <Link
             to="/foro"
-            className="flex items-center justify-center p-4 bg-white rounded-xl shadow-lg hover:bg-blue-200 transition-colors"
+            className="flex items-center justify-start p-4 bg-white rounded-xl shadow-lg hover:bg-blue-200 transition-colors w-full mb-4"
           >
-            <MessageSquare className="w-7 h-7 mr-1 text-blue-800" />
+            <MessageSquare className="w-7 h-7 mr-2 text-blue-800" />
             <span className="font-arial-narrow text-2xl">Foro</span>
           </Link>
+
           <Link
             to="/horarios"
-            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors"
+            className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full mb-4"
           >
             <Clock className="w-7 h-7 mr-2 text-blue-800" />
             <span className="font-arial-narrow text-2xl">Horarios</span>
           </Link>
+
           <Link
             to="/salones"
-            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors"
+            className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full mb-4"
           >
             <School className="w-7 h-7 mr-2 text-blue-800" />
             <span className="font-arial-narrow text-2xl">Salones</span>
           </Link>
+
           <Link
             to="/talleres"
-            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors"
+            className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full"
           >
             <Hammer className="w-7 h-7 mr-2 text-blue-800" />
             <span className="font-arial-narrow text-2xl">Talleres</span>
           </Link>
-        </nav>
+          <div className="mt-6 flex justify-center">
+            <img
+              src="/public/logo-universidad-marista.png"
+              alt="Logo UMG"
+              className="h-48 w-auto relative left-20"
+            />
+          </div>
+        </div>
+
+        <div className="w-full sm:w-full ml-10 justify-end">
+          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 className="text-2xl font-arial-narrow mb-4">
+              Mapa interactivo UMG
+            </h2>
+            <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <img
+                src="/placeholder.svg?height=400&width=800"
+                alt="University Map"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-gray-500 text-lg font-medium">
+                  Interactive Map Placeholder
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
+
+      {/* Sección explicativa del proyecto */}
+      <section className="bg-white p-6 mt-8 rounded-lg shadow-md">
+        <h2 className="text-xl font-arial-narrow mb-4">Acerca del Proyecto:</h2>
+        <p className="text-md text-gray-700">
+          Este proyecto, <strong>Módulo de Información Marista (MIM)</strong>,
+          está diseñado para ofrecer información útil y accesible para la
+          comunidad de la Universidad Marista. A través de esta plataforma, los
+          usuarios pueden acceder a recursos como mapas interactivos, horarios
+          de clases, foros de discusión, y más. Nuestro objetivo es mejorar la
+          experiencia universitaria mediante una interfaz sencilla y
+          herramientas fáciles de usar.
+        </p>
+        <img
+          src="/public/MIM_2.png"
+          alt="Logo MIM"
+          className="w-auto h-auto h-48"
+        />
+      </section>
     </div>
   );
-}
+};
+
+export default MainPage;
