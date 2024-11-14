@@ -36,6 +36,8 @@ import { SiGoogleforms } from "react-icons/si";
 import { RiAdminFill } from "react-icons/ri";
 import { BiSolidHappyBeaming } from "react-icons/bi";
 import { FcAnswers } from "react-icons/fc";
+import { GiNewspaper, GiAcousticMegaphone } from "react-icons/gi";
+import { IoCalendarOutline } from "react-icons/io5";
 
 export default function ForoPage() {
   const [email, setEmail] = useState("");
@@ -54,7 +56,7 @@ export default function ForoPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900">
+      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
         <span className="mr-2">Foro Universitario</span>
         <MdOutlineCastForEducation className="ml-2 text-5xl" />
       </h1>
@@ -72,7 +74,7 @@ export default function ForoPage() {
           <TabsTrigger
             value="notices"
             className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-300 active:text-blue-900 transition-colors p-4 
-        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3"
+        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3 font-arial-narrow font-bold text-lg"
           >
             <span> Novedades</span>
             <TiNews className="ml-4 text-2xl" />
@@ -81,7 +83,7 @@ export default function ForoPage() {
           <TabsTrigger
             value="faq"
             className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-gray-300 active:text-blue-600 transition-colors p-4 
-        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3"
+        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3  font-arial-narrow font-bold text-lg"
           >
             <span>Preguntas Frecuentes </span>
             <FaCircleQuestion className="ml-4 text2xl" />
@@ -90,7 +92,7 @@ export default function ForoPage() {
           <TabsTrigger
             value="contact"
             className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-gray-300 active:text-blue-600 transition-colors p-4 
-        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3"
+        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3  font-arial-narrow font-bold text-lg"
           >
             <span>Contáctanos</span>
             <MdConnectWithoutContact className="ml-4 text-2xl" />
@@ -99,7 +101,7 @@ export default function ForoPage() {
           <TabsTrigger
             value="forms"
             className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-gray-300 active:text-blue-600 transition-colors p-4 
-        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3"
+        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3  font-arial-narrow font-bold text-lg"
           >
             <span> Formularios </span>
             <SiGoogleforms className="ml-4 text-2xl" />
@@ -107,7 +109,7 @@ export default function ForoPage() {
           <TabsTrigger
             value="mural"
             className="text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-gray-300 active:text-blue-600 transition-colors p-4 
-        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3"
+        rounded-lg text-center w-full data-[state=active]:bg-blue-100 mb-3  font-arial-narrow font-bold text-lg"
           >
             <span> Mural Marista </span>
             <FaNewspaper className="ml-4 text-2xl" />
@@ -117,7 +119,7 @@ export default function ForoPage() {
           <div className="grid gap-4 md:grid-cols-2 m">
             <Card>
               <CardHeader>
-                <RiAdminFill className="ml-4 text-2xl" />
+                <RiAdminFill className="ml-4 text-3xl text-blue-600" />
                 <CardTitle className="font-arial-narrow">
                   Avisos a Coordinadores
                 </CardTitle>
@@ -135,7 +137,7 @@ export default function ForoPage() {
             </Card>
             <Card>
               <CardHeader>
-                <FaUniversity className="ml-4 text-2xl" />
+                <FaUniversity className="ml-4 text-3xl text-blue-600" />
                 <CardTitle className="font-arial-narrow">
                   Avisos de la Universidad
                 </CardTitle>
@@ -165,7 +167,7 @@ export default function ForoPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <BiSolidHappyBeaming className="ml-4 text-2xl" />
+              <BiSolidHappyBeaming className="ml-4 text-6xl text-blue-600" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
@@ -209,7 +211,7 @@ export default function ForoPage() {
               <CardDescription className="font-arial-narrow">
                 Envíanos tus dudas o comentarios
               </CardDescription>
-              <MdOutlineMoveToInbox className="ml-4 text-2xl" />
+              <MdOutlineMoveToInbox className="ml-4 text-5xl text-blue-600" />
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -320,6 +322,101 @@ export default function ForoPage() {
               </Accordion>
             </CardContent>
           </Card>
+        </TabsContent>
+        <TabsContent value="mural">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="flex flex-col items-center">
+              <CardHeader className="text-center mb-4">
+                <GiNewspaper className="text-8xl text-blue-800" />
+                <CardTitle className="font-arial-narrow">Deportivos</CardTitle>
+                <MdOutlineSportsVolleyball className="ml-4 text-5xl relative left-4 text-blue-400" />
+              </CardHeader>
+              <CardContent>
+                <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  Consulta los eventos deportivos y más información relevante.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <li>Partido de fútbol el 10 de noviembre</li>
+                  <li>Voleibol vs ITESO 16 Noviembre</li>
+                  <li>Codemaru 2024 (14-Noviembre-19-Noviembre)</li>
+                </ul>
+                <a
+                  className="font-arial-narrow"
+                  href="https://www.example.com/deportivos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#007BFF", fontWeight: "bold" }}
+                >
+                  Ver más eventos deportivos
+                </a>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col items-center">
+              <CardHeader className="text-center mb-4">
+                <GiNewspaper className="text-8xl text-blue-800" />{" "}
+                {/* Ícono de color azul */}
+                <CardTitle className="font-arial-narrow">
+                  Convocatorias
+                </CardTitle>
+                <GiAcousticMegaphone className="ml-4 text-5xl relative left-6 text-blue-400" />
+              </CardHeader>
+              <CardContent>
+                <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  Información sobre convocatorias abiertas para diversas
+                  actividades.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <li>Convocatoria para becas 2024</li>
+                  <li>
+                    Convocatoria para el programa de intercambio académico
+                  </li>
+                  <li>Convocatoria para voluntariado universitario</li>
+                </ul>
+                <a
+                  className="font-arial-narrow"
+                  href="https://www.example.com/convocatorias"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#007BFF", fontWeight: "bold" }}
+                >
+                  Ver todas las convocatorias
+                </a>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col items-center">
+              <CardHeader className="text-center mb-4">
+                <GiNewspaper className="text-8xl text-blue-800" />
+                <CardTitle className="font-arial-narrow">
+                  Eventos del Mes
+                </CardTitle>
+                <IoCalendarOutline className="ml-4 text-5xl relative left-6 text-blue-400" />
+              </CardHeader>
+              <CardContent>
+                <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  Eventos y actividades que se llevarán a cabo este mes en
+                  nuestra comunidad.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <li>
+                    Conferencia sobre innovación educativa el 12 de noviembre
+                  </li>
+                  <li>
+                    Concierto de la banda universitaria el 20 de noviembre
+                  </li>
+                  <li>Feria cultural el 25 de noviembre</li>
+                </ul>
+                <a
+                  className="font-arial-narrow"
+                  href="https://www.example.com/eventos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#007BFF", fontWeight: "bold" }}
+                >
+                  Ver todos los eventos
+                </a>
+              </CardContent>
+            </Card>
+          </div>
         </TabsContent>
       </Tabs>
     </div>

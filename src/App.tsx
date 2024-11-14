@@ -4,8 +4,8 @@ import Foro from "./pages/Foro";
 import Horarios from "./pages/Horarios";
 import Salones from "./pages/Salones";
 import Talleres from "./pages/Talleres";
-import Calendar from "./pages/Calendar";
 import Mural from "./pages/Mural";
+import Calendar from "./pages/Calendar";
 
 export default function App() {
   return (
@@ -16,8 +16,8 @@ export default function App() {
         <Route path="/horarios" element={<Horarios />} />
         <Route path="/salones" element={<Salones />} />
         <Route path="/talleres" element={<Talleres />} />
-        <Route path="/calendario" element={<Calendar />} />
         <Route path="/mural" element={<Mural />} />
+        <Route path="/calendario" element={<Calendar />} />
       </Routes>
     </Router>
   );
