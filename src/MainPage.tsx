@@ -3,7 +3,7 @@ import { MessageSquare, Clock, School, Hammer, Calendar } from "lucide-react";
 
 const MainPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 m-1 p-2">
+    <div className="min-h-screen bg-gray-100 m-1 ">
       <header className="bg-blue-200 text-white p-1 w-full flex items-center justify-between">
         <div className="flex flex-col">
           <h1 className="text-8xl font-thin mt-2">MIM </h1>

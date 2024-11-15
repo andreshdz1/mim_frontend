@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
+import { FcSearch } from "react-icons/fc";
 import {
   Select,
   SelectContent,
@@ -11,15 +15,15 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/layout/card";
-import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { LuFileClock } from "react-icons/lu";
 import { MdCategory } from "react-icons/md";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa6";
 
 export default function HorariosPage() {
+  const [searchTerm, setSearchTerm] = useState(""); // Estado para la búsqueda
   const navigate = useNavigate();
+
   const categories = [
     { id: "ingenierias", name: "Ingenierías" },
     { id: "licenciaturas", name: "Licenciaturas" },
@@ -43,25 +47,61 @@ export default function HorariosPage() {
       { id: 7, name: "Nutrición y Gastronomía", semesters: 10 },
     ],
   };
-  const returnMainPage = () => {
+
+  const returnToMainPage = () => {
     navigate("/");
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
-        <LuFileClock className="ml-2 text-5xl relative right-5" />
+    <div className="min-h-screen bg-gray-100 ">
+      {/* Header */}
+      <header className="bg-blue-200 text-white p-4 w-full flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          {/* Logo de MIM */}
+          <img src="/public/MIM_2.png" alt="Logo MIM" className="h-20 w-20" />
+          <h1 className="text-5xl mt-2 font-thin">MIM</h1>
+        </div>
 
-        <span className="mr-2">Horarios</span>
-      </h1>
-      <div className="absolute top-5 left-20 bottom-0 flex items-center ">
+        {/* Barra de búsqueda */}
+        <div className="flex items-center space-x-2">
+          <input
+            type="text"
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border border-gray-300 p-2 rounded-lg w-80 text-black shadow-lg"
+          />
+          <button className="bg-blue-400 text-white p-2 rounded-lg hover:bg-blue-600 transition">
+            <FcSearch className="text-3xl" />
+          </button>
+        </div>
+
+        {/* Botón de navegación a la página principal */}
         <button
-          onClick={returnMainPage}
+          onClick={returnToMainPage}
+          className="inline-block bg-blue-500 text-white p-2 rounded-full text-xl hover:bg-blue-600 shadow-lg transition"
+        >
+          <IoHome className="text-xl" />
+        </button>
+      </header>
+
+      {/* Encabezado de Horarios */}
+      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 relative top-3">
+        <span className="mr-2">Foro Universitario</span>
+        <LuFileClock className="ml-2 text-5xl" />
+      </h1>
+
+      {/* Botón para regresar a la página principal */}
+      <div className="absolute top-5 left-20 bottom-0 flex items-center">
+        <button
+          onClick={returnToMainPage}
           className="inline-block bg-blue-500 text-white p-2 rounded-full text-xl hover:bg-blue-600 transition"
         >
-          <IoIosArrowBack className="text-xl" />
+          <IoHome className="text-xl" />
         </button>
       </div>
+
+      {/* Card para seleccionar categoría */}
       <Card className="max-w-4xl mx-auto mb-6">
         <CardHeader>
           <CardTitle className="font-arial-narrow">
@@ -84,6 +124,8 @@ export default function HorariosPage() {
           </Select>
         </CardContent>
       </Card>
+
+      {/* Card para seleccionar carrera */}
       <Card className="max-w-4xl mx-auto mb-6">
         <CardHeader>
           <CardTitle className="font-arial-narrow">
@@ -97,31 +139,28 @@ export default function HorariosPage() {
               <SelectValue placeholder="Selecciona una carrera" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Aeroespacial">Aeroespacial</SelectItem>
-              <SelectItem value="Automotriz">Automotriz</SelectItem>
-              <SelectItem value="Cibernética">Cibernética</SelectItem>
-              <SelectItem value="Inteligencia Artificial (IA)">
-                Inteligencia Artificial (IA)
-              </SelectItem>
-              <SelectItem value="Industrial">Industrial</SelectItem>
+              {careers.ingenierias.map((career) => (
+                <SelectItem key={career.id} value={career.name}>
+                  {career.name}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </CardContent>
       </Card>
 
+      {/* Card para seleccionar semestre */}
       <Card className="max-w-4xl mx-auto mb-6">
         <CardHeader>
           <CardTitle>Selecciona tu semestre</CardTitle>
+          <FaGraduationCap className="ml-2 text-3xl relative left-2 text-blue-400" />
         </CardHeader>
-        <FaGraduationCap className="ml-2 text-3xl relative left-2 text-blue-400" />
-
         <CardContent>
           <Select>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Selecciona el semestre" />
             </SelectTrigger>
             <SelectContent>
-              {/* Esto debería ser dinámico según la carrera seleccionada */}
               <SelectItem value="1">Semestre 1</SelectItem>
               <SelectItem value="2">Semestre 2</SelectItem>
               <SelectItem value="3">Semestre 3</SelectItem>
@@ -137,9 +176,11 @@ export default function HorariosPage() {
         </CardContent>
       </Card>
 
-      {/* Mostrar las opciones seleccionadas */}
+      {/* Mostrar las opciones seleccionadas (este es un área donde puedes personalizar aún más) */}
       <div className="text-center mt-4">
-        <h2 className="text-xl font-semibold"></h2>
+        <h2 className="text-xl font-semibold">
+          {/* Aquí iría el resumen de la categoría, carrera y semestre seleccionados */}
+        </h2>
       </div>
     </div>
   );
