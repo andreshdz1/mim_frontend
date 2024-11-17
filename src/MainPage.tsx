@@ -7,9 +7,7 @@ const MainPage = () => {
       <header className="bg-blue-200 text-white p-1 w-full flex items-center justify-between">
         <div className="flex flex-col">
           <h1 className="text-8xl font-thin mt-2">MIM </h1>
-          <h2 className="text-3xl font-arial-narrow">
-            Módulo de Información Marista
-          </h2>
+          <h2 className="text-3xl font-thin">Módulo de Información Marista</h2>
         </div>
         <img src="/public/MIM_2.png" alt="Logo MIM" className="h-40" />
       </header>
@@ -21,7 +19,7 @@ const MainPage = () => {
             className="flex items-center justify-start p-4 bg-white rounded-xl shadow-lg hover:bg-blue-200 transition-colors w-full mb-4"
           >
             <Calendar className="w-7 h-7 mr-2 text-blue-800" />
-            <span className="font-arial-narrow text-2xl">Calendario</span>
+            <span className="font-thin text-3xl">Calendario</span>
           </Link>
 
           <Link
@@ -29,7 +27,7 @@ const MainPage = () => {
             className="flex items-center justify-start p-4 bg-white rounded-xl shadow-lg hover:bg-blue-200 transition-colors w-full mb-4"
           >
             <MessageSquare className="w-7 h-7 mr-2 text-blue-800" />
-            <span className="font-arial-narrow text-2xl">Foro</span>
+            <span className="font-thin text-3xl">Foro</span>
           </Link>
 
           <Link
@@ -37,7 +35,7 @@ const MainPage = () => {
             className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full mb-4"
           >
             <Clock className="w-7 h-7 mr-2 text-blue-800" />
-            <span className="font-arial-narrow text-2xl">Horarios</span>
+            <span className="font-thin text-3xl">Horarios</span>
           </Link>
 
           <Link
@@ -45,7 +43,7 @@ const MainPage = () => {
             className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full mb-4"
           >
             <School className="w-7 h-7 mr-2 text-blue-800" />
-            <span className="font-arial-narrow text-2xl">Salones</span>
+            <span className="font-thin text-3xl">Salones</span>
           </Link>
 
           <Link
@@ -53,7 +51,7 @@ const MainPage = () => {
             className="flex items-center justify-start p-4 bg-white rounded-lg shadow-md hover:bg-blue-50 transition-colors w-full"
           >
             <Hammer className="w-7 h-7 mr-2 text-blue-800" />
-            <span className="font-arial-narrow text-2xl">Talleres</span>
+            <span className="font-thin text-3xl">Talleres</span>
           </Link>
           <div className="mt-6 flex justify-center">
             <img
@@ -66,9 +64,7 @@ const MainPage = () => {
 
         <div className="w-full sm:w-full ml-10 justify-end">
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-2xl font-arial-narrow mb-4">
-              Mapa interactivo UMG
-            </h2>
+            <h2 className="text-5xl font-thin mb-4">Mapa interactivo UMG</h2>
             <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
               <img
                 src="/placeholder.svg?height=400&width=800"

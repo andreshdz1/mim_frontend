@@ -22,6 +22,8 @@ import { FaGraduationCap } from "react-icons/fa6";
 
 export default function HorariosPage() {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para la búsqueda
+  const [selectedCategory, setSelectedCategory] = useState(""); // Estado para la categoría seleccionada
+  const [selectedCareer, setSelectedCareer] = useState(""); // Estado para la carrera seleccionada
   const navigate = useNavigate();
 
   const categories = [
@@ -52,9 +54,15 @@ export default function HorariosPage() {
     navigate("/");
   };
 
+  // Maneja la selección de categoría
+  const handleCategoryChange = (value) => {
+    setSelectedCategory(value); // Actualiza la categoría seleccionada
+    setSelectedCareer(""); // Reinicia la carrera seleccionada al cambiar la categoría
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 ">
-      {/* Header */}
+    <div className="min-h-screen bg-gray-100">
+      {/* Header azul */}
       <header className="bg-blue-200 text-white p-4 w-full flex items-center justify-between">
         <div className="flex items-center space-x-4">
           {/* Logo de MIM */}
@@ -85,98 +93,96 @@ export default function HorariosPage() {
         </button>
       </header>
 
-      {/* Encabezado de Horarios */}
-      <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 relative top-3">
-        <span className="mr-2">Foro Universitario</span>
-        <LuFileClock className="ml-2 text-5xl" />
-      </h1>
-
-      {/* Botón para regresar a la página principal */}
-      <div className="absolute top-5 left-20 bottom-0 flex items-center">
-        <button
-          onClick={returnToMainPage}
-          className="inline-block bg-blue-500 text-white p-2 rounded-full text-xl hover:bg-blue-600 transition"
-        >
-          <IoHome className="text-xl" />
-        </button>
-      </div>
-
-      {/* Card para seleccionar categoría */}
-      <Card className="max-w-4xl mx-auto mb-6">
+      {/* Card para seleccionar opciones */}
+      <Card className="max-w-4xl mx-auto mb-6 mt-8">
+        {/* Encabezado de Horarios */}
         <CardHeader>
-          <CardTitle className="font-arial-narrow">
-            Selecciona la categoría
-          </CardTitle>
-          <MdCategory className="ml-2 text-3xl relative right-5 text-blue-400" />
+          <div className="flex items-center justify-center">
+            <h1 className="text-3xl font-thin text-5xl text-blue-900 flex items-center justify-center pt-4">
+              <span className="mr-2">Horarios</span>
+              <LuFileClock className="ml-2 text-5xl" />
+            </h1>
+          </div>
         </CardHeader>
+        {/* Contenido de la Card */}
         <CardContent>
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Selecciona una categoría" />
-            </SelectTrigger>
-            <SelectContent>
-              {categories.map((category) => (
-                <SelectItem key={category.id} value={category.id}>
-                  {category.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          {/* Card para seleccionar categoría */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="font-thin">
+                Selecciona la categoría
+              </CardTitle>
+              <MdCategory className="ml-2 text-3xl text-blue-400" />
+            </CardHeader>
+            <CardContent>
+              <Select
+                value={selectedCategory}
+                onValueChange={handleCategoryChange}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Category.." />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((category) => (
+                    <SelectItem key={category.id} value={category.id}>
+                      {category.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {/* Card para seleccionar carrera */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="font-thin">Selecciona tu carrera</CardTitle>
+              <AiOutlineSchedule className="ml-2 text-3xl text-blue-400" />
+            </CardHeader>
+            <CardContent>
+              <Select value={selectedCareer} onValueChange={setSelectedCareer}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Career.." />
+                </SelectTrigger>
+                <SelectContent>
+                  {selectedCategory &&
+                    careers[selectedCategory]?.map((career) => (
+                      <SelectItem key={career.id} value={career.name}>
+                        {career.name}
+                      </SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {/* Card para seleccionar semestre */}
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="font-thin">
+                Selecciona tu semestre
+              </CardTitle>
+              <FaGraduationCap className="ml-2 text-3xl text-blue-400" />
+            </CardHeader>
+            <CardContent>
+              <Select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Semester..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {[...Array(10).keys()].map((semestre) => (
+                    <SelectItem key={semestre + 1} value={semestre + 1}>
+                      Semestre {semestre + 1}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
         </CardContent>
       </Card>
 
-      {/* Card para seleccionar carrera */}
-      <Card className="max-w-4xl mx-auto mb-6">
-        <CardHeader>
-          <CardTitle className="font-arial-narrow">
-            Selecciona tu carrera
-          </CardTitle>
-          <AiOutlineSchedule className="ml-2 text-3xl relative right-5 text-blue-400" />
-        </CardHeader>
-        <CardContent>
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Selecciona una carrera" />
-            </SelectTrigger>
-            <SelectContent>
-              {careers.ingenierias.map((career) => (
-                <SelectItem key={career.id} value={career.name}>
-                  {career.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </CardContent>
-      </Card>
-
-      {/* Card para seleccionar semestre */}
-      <Card className="max-w-4xl mx-auto mb-6">
-        <CardHeader>
-          <CardTitle>Selecciona tu semestre</CardTitle>
-          <FaGraduationCap className="ml-2 text-3xl relative left-2 text-blue-400" />
-        </CardHeader>
-        <CardContent>
-          <Select>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Selecciona el semestre" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="1">Semestre 1</SelectItem>
-              <SelectItem value="2">Semestre 2</SelectItem>
-              <SelectItem value="3">Semestre 3</SelectItem>
-              <SelectItem value="4">Semestre 4</SelectItem>
-              <SelectItem value="5">Semestre 5</SelectItem>
-              <SelectItem value="6">Semestre 6</SelectItem>
-              <SelectItem value="7">Semestre 7</SelectItem>
-              <SelectItem value="8">Semestre 8</SelectItem>
-              <SelectItem value="9">Semestre 9</SelectItem>
-              <SelectItem value="10">Semestre 10</SelectItem>
-            </SelectContent>
-          </Select>
-        </CardContent>
-      </Card>
-
-      {/* Mostrar las opciones seleccionadas (este es un área donde puedes personalizar aún más) */}
+      {/* Mostrar las opciones seleccionadas */}
       <div className="text-center mt-4">
         <h2 className="text-xl font-semibold">
           {/* Aquí iría el resumen de la categoría, carrera y semestre seleccionados */}

@@ -88,17 +88,17 @@ export default function ForoPage() {
 
       {/*Contenido Principal*/}
       <Card className="  p-6 shadow-lg">
-        <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
+        <h1 className="text-3xl font-thin text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
           <span className="mr-2">Foro Universitario</span>
           <MdOutlineCastForEducation className="ml-2 text-5xl" />
         </h1>
         <div className="absolute top-5 left-20 bottom-0 flex items-center "></div>
         <Tabs defaultValue="notices" className="max-w-4xl mx-auto pb-40">
-          <TabsList className="flex justify-center space-x-4 p-4 pb-5 pt-8 pl-10">
+          <TabsList className="flex justify-center space-x-4 p-4 pb-5 pt-8 pr-20">
             <TabsTrigger
               value="notices"
               className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-100 active:text-blue-900 transition-colors p-4
-                                   rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-arial-narrow font-bold text-lg 
+                                   rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-thin  text-lg 
                                    border border-black-600 "
             >
               <span> Novedades</span>
@@ -107,7 +107,7 @@ export default function ForoPage() {
             <TabsTrigger
               value="faq"
               className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-100 active:text-blue-900 transition-colors p-4 
-                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-arial-narrow font-bold text-lg 
+                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-thin text-lg 
                               border border-black-600"
             >
               <span>Preguntas Frecuentes</span>
@@ -116,7 +116,7 @@ export default function ForoPage() {
             <TabsTrigger
               value="contact"
               className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-100 active:text-blue-900 transition-colors p-4 
-                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-arial-narrow font-bold text-lg 
+                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-thin text-lg 
                               border border-black-600"
             >
               <span>Contáctanos</span>
@@ -125,7 +125,7 @@ export default function ForoPage() {
             <TabsTrigger
               value="forms"
               className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-100 active:text-blue-900 transition-colors p-4 
-                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-arial-narrow font-bold text-lg 
+                              rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-thin text-lg 
                               border border-black-600"
             >
               <span> Formularios</span>
@@ -134,7 +134,7 @@ export default function ForoPage() {
             <TabsTrigger
               value="mural"
               className="text-md text-gray-900 hover:text-blue-600 hover:bg-blue-100 active:bg-blue-100 active:text-blue-900 transition-colors p-4 
-                                   rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-arial-narrow font-bold text-lg
+                                   rounded-lg text-center w-auto h-auto data-[state=active]:bg-blue-200 mb-3 font-thin text-lg
                                     border border-black-600"
             >
               <span> Mural Marista</span>
@@ -146,15 +146,15 @@ export default function ForoPage() {
               <Card>
                 <CardHeader>
                   <RiAdminFill className="ml-4 text-3xl text-blue-600" />
-                  <CardTitle className="font-arial-narrow">
+                  <CardTitle className="font-thin">
                     Avisos a Coordinadores
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <h3 className="text-lg font-italic font-arial-narrow  text-gray-900 mb-4">
+                  <h3 className="text-lg font-italic font-thin  text-gray-900 mb-4">
                     Mes: Noviembre 2024
                   </h3>
-                  <ul className="list-disc pl-5 space-y-2">
+                  <ul className="list-disc pl-5 space-y-2 font-thin">
                     <li>Reunión de coordinación el próximo lunes</li>
                     <li>Entrega de informes mensuales</li>
                     <li>Actualización de syllabus para el próximo semestre</li>
@@ -164,15 +164,15 @@ export default function ForoPage() {
               <Card>
                 <CardHeader>
                   <FaUniversity className="ml-4 text-3xl text-blue-600" />
-                  <CardTitle className="font-arial-narrow">
+                  <CardTitle className="font-thin">
                     Avisos de la Universidad
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <h4 className="text-lg font-italic font-arial-narrow  text-gray-900 mb-4">
+                  <h4 className="text-lg font-italic font-thin  text-gray-900 mb-4">
                     Mes: Noviembre 2024
                   </h4>
-                  <ul className="list-disc pl-5 space-y-2">
+                  <ul className="font-thin list-disc pl-5 space-y-2">
                     <li>Ceremonia de graduación el 15 de julio</li>
                     <li>Mantenimiento de la biblioteca este fin de semana</li>
                     <li>Nuevos cursos de verano disponibles</li>
@@ -188,7 +188,7 @@ export default function ForoPage() {
           <TabsContent value="faq">
             <Card>
               <CardHeader>
-                <CardTitle className="font-arial-narrow">
+                <CardTitle className="font-thin">
                   Preguntas Frecuentes
                 </CardTitle>
               </CardHeader>
@@ -196,30 +196,30 @@ export default function ForoPage() {
                 <BiSolidHappyBeaming className="ml-4 text-6xl text-blue-600" />
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
-                    <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
+                    <AccordionTrigger className="font-thin text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
                       ¿Cómo puedo obtener mi horario?
                     </AccordionTrigger>
-                    <AccordionContent className="font-arial-narrow">
+                    <AccordionContent className="font-thin">
                       Puedes obtener tu horario accediendo a la sección
                       "Horarios" en el menú principal. Allí podrás seleccionar
                       tu carrera y ver el horario correspondiente.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
-                    <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
+                    <AccordionTrigger className="font-thin text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
                       ¿Dónde puedo ver mis calificaciones?
                     </AccordionTrigger>
-                    <AccordionContent className="font-arial-narrow">
+                    <AccordionContent className="font-thin">
                       Las calificaciones se publican en el portal del
                       estudiante. Accede con tu usuario y contraseña, y en la
                       sección "Académico" encontrarás tus notas.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
-                    <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
+                    <AccordionTrigger className="font-thin text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
                       ¿Cómo solicito una constancia de estudios?
                     </AccordionTrigger>
-                    <AccordionContent className="font-arial-narrow">
+                    <AccordionContent className="font-thin">
                       Para solicitar una constancia de estudios, debes acudir a
                       la Oficina de Registros Académicos con tu carnet de
                       estudiante. El trámite toma aproximadamente 3 días
@@ -234,8 +234,8 @@ export default function ForoPage() {
           <TabsContent value="contact">
             <Card>
               <CardHeader>
-                <CardTitle className="font-arial-narrow">Contáctanos</CardTitle>
-                <CardDescription className="font-arial-narrow">
+                <CardTitle className="font-thin">Contáctanos</CardTitle>
+                <CardDescription className="font-thin">
                   Envíanos tus dudas o comentarios
                 </CardDescription>
                 <MdOutlineMoveToInbox className="ml-4 text-5xl text-blue-600" />
@@ -245,7 +245,7 @@ export default function ForoPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="font-arial-narrow block text-sm font-medium text-gray-700"
+                      className="font-thin block text-sm font-medium text-gray-700"
                     >
                       Correo Electrónico
                     </label>
@@ -261,7 +261,7 @@ export default function ForoPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="font-arial-narrow block text-sm font-medium text-gray-700"
+                      className="font-thin block text-sm font-medium text-gray-700"
                     >
                       Mensaje
                     </label>
@@ -273,7 +273,7 @@ export default function ForoPage() {
                       className="mt-1"
                     />
                   </div>
-                  <Button type="submit" className="font-arial-narrow">
+                  <Button type="submit" className="font-thin">
                     Enviar
                   </Button>
                 </form>
@@ -287,11 +287,11 @@ export default function ForoPage() {
                 <FcAnswers className="ml-4 text-8xl" />
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
-                    <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
+                    <AccordionTrigger className="font-thin text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
                       ¿Dónde puedo completar la solicitud para registrar mi
                       vehículo y poder hacer uso del estacionamiento?
                     </AccordionTrigger>
-                    <AccordionContent className="font-arial-narrow">
+                    <AccordionContent className="font-thin">
                       Puedes llenar la solicitud para registrar tu vehículo y
                       hacer uso del estacionamiento accediendo a este
                       <a
@@ -307,11 +307,11 @@ export default function ForoPage() {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
-                    <AccordionTrigger className="font-arial-narrow text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
+                    <AccordionTrigger className="font-thin text-gray-900 hover:text-blue-600 focus:text-blue-600 active:text-blue-800 focus:underline">
                       ¿Dónde puedo ver los programas de Servicio Social
                       disponibles? ¿Dónde o con quien me puedo inscribir?
                     </AccordionTrigger>
-                    <AccordionContent className="font-arial-narrow">
+                    <AccordionContent className="font-thin">
                       <p>
                         * Para obtener más información sobre las plazas
                         disponibles para el Servicio Social, puedes consultar el
@@ -355,22 +355,20 @@ export default function ForoPage() {
               <Card className="flex flex-col items-center">
                 <CardHeader className="text-center mb-4">
                   <GiNewspaper className="text-8xl text-blue-800" />
-                  <CardTitle className="font-arial-narrow">
-                    Deportivos
-                  </CardTitle>
+                  <CardTitle className="font-thin">Deportivos</CardTitle>
                   <MdOutlineSportsVolleyball className="ml-4 text-5xl relative left-4 text-blue-400" />
                 </CardHeader>
                 <CardContent>
-                  <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  <p className="font-thin font-bold mb-4 text-blue-500">
                     Consulta los eventos deportivos y más información relevante.
                   </p>
-                  <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <ul className="list-disc pl-5 space-y-2 font-thin">
                     <li>Partido de fútbol el 10 de noviembre</li>
                     <li>Voleibol vs ITESO 16 Noviembre</li>
                     <li>Codemaru 2024 (14-Noviembre-19-Noviembre)</li>
                   </ul>
                   <a
-                    className="font-arial-narrow"
+                    className="font-thin"
                     href="https://www.example.com/deportivos"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -384,17 +382,15 @@ export default function ForoPage() {
                 <CardHeader className="text-center mb-4">
                   <GiNewspaper className="text-8xl text-blue-800" />{" "}
                   {/* Ícono de color azul */}
-                  <CardTitle className="font-arial-narrow">
-                    Convocatorias
-                  </CardTitle>
+                  <CardTitle className="font-thin">Convocatorias</CardTitle>
                   <GiAcousticMegaphone className="ml-4 text-5xl relative left-6 text-blue-400" />
                 </CardHeader>
                 <CardContent>
-                  <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  <p className="font-thin font-bold mb-4 text-blue-500">
                     Información sobre convocatorias abiertas para diversas
                     actividades.
                   </p>
-                  <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <ul className="list-disc pl-5 space-y-2 font-thin">
                     <li>Convocatoria para becas 2024</li>
                     <li>
                       Convocatoria para el programa de intercambio académico
@@ -402,7 +398,7 @@ export default function ForoPage() {
                     <li>Convocatoria para voluntariado universitario</li>
                   </ul>
                   <a
-                    className="font-arial-narrow"
+                    className="font-thin"
                     href="https://www.example.com/convocatorias"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -415,17 +411,15 @@ export default function ForoPage() {
               <Card className="flex flex-col items-center">
                 <CardHeader className="text-center mb-4">
                   <GiNewspaper className="text-8xl text-blue-800" />
-                  <CardTitle className="font-arial-narrow">
-                    Eventos del Mes
-                  </CardTitle>
+                  <CardTitle className="font-thin">Eventos del Mes</CardTitle>
                   <IoCalendarOutline className="ml-4 text-5xl relative left-6 text-blue-400" />
                 </CardHeader>
                 <CardContent>
-                  <p className="font-arial-narrow font-bold mb-4 text-blue-300">
+                  <p className="font-thin font-bold mb-4 text-blue-500">
                     Eventos y actividades que se llevarán a cabo este mes en
                     nuestra comunidad.
                   </p>
-                  <ul className="list-disc pl-5 space-y-2 font-arial-narrow">
+                  <ul className="list-disc pl-5 space-y-2 font-thin">
                     <li>
                       Conferencia sobre innovación educativa el 12 de noviembre
                     </li>
@@ -435,7 +429,7 @@ export default function ForoPage() {
                     <li>Feria cultural el 25 de noviembre</li>
                   </ul>
                   <a
-                    className="font-arial-narrow"
+                    className="font-thin"
                     href="https://www.example.com/eventos"
                     target="_blank"
                     rel="noopener noreferrer"

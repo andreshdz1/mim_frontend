@@ -22,6 +22,7 @@ export default function CalendarPage() {
           {/* Logo de MIM */}
           <img src="/public/MIM_2.png" alt="Logo MIM" className="h-20 w-20" />
           <h1 className="text-5xl mt-2 font-thin">MIM</h1>
+          <h2 className="text-2xl font-thin">Modulo de Información Marista</h2>
         </div>
 
         {/* Barra de búsqueda */}
@@ -51,7 +52,7 @@ export default function CalendarPage() {
       <div className="p-4">
         {/*Hacemos un card para mas bonito */}
         <Card className="p-6 shadow-lg mb-6">
-          <h1 className="text-3xl font-arial-narrow text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
+          <h1 className="text-3xl font-thin text-5xl text-center mb-6 flex items-center justify-center text-blue-900 ">
             <FaCalendarDay className="ml-2 text-5xl relative right-5" />
             <span className="mr-2">Calendario Ciclo Escolar 2024-2025</span>
           </h1>
@@ -60,20 +61,20 @@ export default function CalendarPage() {
           <div className="flex justify-center mb-6">
             <button
               onClick={() => setSemester("2024-A")}
-              className={`p-2 px-6 rounded-lg mr-4 font-arial-narrow ${semester === "2024-A" ? "bg-blue-300 text-white" : "bg-gray-200"}`}
+              className={`p-2 px-6 rounded-lg mr-4 font-thin ${semester === "2024-A" ? "bg-blue-300 text-white" : "bg-gray-200"}`}
             >
               2024-A
             </button>
             <button
               onClick={() => setSemester("2024-B")}
-              className={`p-2 px-6 rounded-lg font-arial-narrow ${semester === "2024-B" ? "bg-blue-300 text-white" : "bg-gray-200"}`}
+              className={`p-2 px-6 rounded-lg font-thin ${semester === "2024-B" ? "bg-blue-300 text-white" : "bg-gray-200"}`}
             >
               2024-B
             </button>
           </div>
 
           {/* Mostrar semestre seleccionado */}
-          <div className="text-center mb-6 font-arial-narrow">
+          <div className="text-center mb-6 font-thin">
             <p>
               Semestre Seleccionado: <strong>{semester}</strong>
             </p>
@@ -84,7 +85,7 @@ export default function CalendarPage() {
         {semester === "2024-A" && (
           <Card className="p-6 shadow-lg mb-6">
             <div className="card-header p-4">
-              <h2 className="text-2xl font-arial-narrow font-semibold text-blue-400">
+              <h2 className="text-2xl font-thin font-semibold text-blue-400">
                 Calendario 2024-A
               </h2>
             </div>
@@ -114,7 +115,7 @@ export default function CalendarPage() {
         {semester === "2024-B" && (
           <Card className="p-6 shadow-lg mb-6">
             <div className="card-header p-4">
-              <h2 className="text-2xl font-arial-narrow font-semibold text-blue-400">
+              <h2 className="text-2xl font-thin font-semibold text-blue-400">
                 Calendario 2024-B
               </h2>
             </div>
