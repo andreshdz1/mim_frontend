@@ -71,6 +71,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    fontFamily: {
+      "arial-narrow": ["Arial Narrow", "Arial", "sans-serif"],
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };

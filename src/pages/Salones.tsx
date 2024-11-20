@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tab";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/navigation/tab";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Label } from "../components/ui/label";
+} from "../components/layout/card";
+import { Button } from "../components/navigation/button";
+import { Label } from "../components/forms/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../components/ui/select";
+} from "../components/forms/select";
 import {
   Table,
   TableBody,
@@ -23,8 +28,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
-import { Calendar } from "../components/ui/calendar";
+} from "../components/layout/table";
+import { Calendar } from "../components/layout/calendar";
 
 // Mock data
 const rooms = [

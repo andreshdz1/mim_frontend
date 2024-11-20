@@ -4,16 +4,20 @@ import Foro from "./pages/Foro";
 import Horarios from "./pages/Horarios";
 import Salones from "./pages/Salones";
 import Talleres from "./pages/Talleres";
+import Mural from "./pages/Mural";
+import Calendar from "./pages/Calendar";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/Foro" element={<Foro />} />
-        <Route path="/Horarios" element={<Horarios />} />
-        <Route path="/Salones" element={<Salones />} />
-        <Route path="/Talleres" element={<Talleres />} />
+        <Route path="/foro" element={<Foro />} />
+        <Route path="/horarios" element={<Horarios />} />
+        <Route path="/salones" element={<Salones />} />
+        <Route path="/talleres" element={<Talleres />} />
+        <Route path="/mural" element={<Mural />} />
+        <Route path="/calendario" element={<Calendar />} />
       </Routes>
     </Router>
   );
